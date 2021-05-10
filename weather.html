@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://use.typekit.net/xjh0ild.css">
+  </head>
+  <body>
+      <div class="background-sunny" id="background">
+    <link rel="stylesheet" href="src/style.css" />
+    <div class="d-inline-flex justify-content-center w-100"> 
+      <h2 class="city-description-style">Currently in</h2>
+      <form id="city-form">
+        <input type="text" class="city-input-style city-style" id="city-input">
+      </form>
+      <h2 class="city-description-style">it's <span id="temperature-description"></span></h2> 
+    </div>
+    <div class="container today">
+    <div class="row">
+        <div class="col" id="icon-today"><i class="bi today-icon"></i></div>
+        <div class="col"><p class="current-data" id="current-time">Sun, 14:46</p> 
+          <h1 class="temperature-today">
+          <span id="temperature-today"></span><span class="temperature-today" id="temperature-symbol">°C</span>
+        </h1><p class="current-data">30°C/40°C</p></div>
+        <div class="col">
+          <div class="container">
+          <div class="row">
+      <div class="col add-today-info-icon">
+          <i class="bi bi-wind"></i><br />
+          <i class="bi bi-umbrella"></i><br />
+          <i class="bi bi-droplet"></i>
+          </div>
+            <div class="col add-today-info">      
+      <p id="today-wind">2 m/s</p>
+      <p id="today-cloudiness">0%</p>
+      <p id="today-humidity">70%</p></div>
+          </div>
+          </div>
+          </div>
+          </div>
+      <div class="container other-days">
+            <div class="row">
+              <div class="col other-days-info"><i class="bi bi-cloud-lightning-rain other-days-icon"></i><br />MON <br /> 30°C/40°C</div>
+              <div class="col other-days-info"><i class="bi bi-cloud-lightning-rain other-days-icon"></i><br /> TUE <br /> 30°C/40°C</div>
+              <div class="col other-days-info"><i class="bi bi-cloud-lightning-rain other-days-icon"></i><br /> WED <br />30°C/40°C</div>
+              <div class="col other-days-info"><i class="bi bi-cloud-lightning-rain other-days-icon"></i><br />THU <br /> 30°C/40°C</div>
+              <div class="col other-days-info"><i class="bi bi-cloud-lightning-rain other-days-icon"></i><br />FRI <br />30°C/40°C</div>
+            </div>
+          </div>
+          </div>
+          <span class="grades">
+            <a href="#" id="celsius-link">°C</a> | <a href="#" id="fahrenheit-link">°F</a>
+          </span>
+          <script src="src/index.js"></script>
+        </body>
+      </html>
+      
+      
+      
+      
+
+
+
