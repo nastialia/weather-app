@@ -1,0 +1,164 @@
+
+.city-input-style {
+    background-color: transparent;
+    color: #1B1F22;
+    outline: none;
+    outline-style: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid black 1px;
+    margin: 20px 10px;
+    width: auto;
+    line-height: 1;
+    padding: 0 2px;
+  }
+  
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+      transition: background-color 5000s ease-in-out 0s;
+  }
+  
+  .city-style {
+    font-size: 25px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    font-family: museo-sans,sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #1B1F22;
+  }
+  
+  .city-description-style {
+    font-size: 25px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    font-family: museo-sans,sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    color: #1B1F22;
+  }
+  
+  #background {
+    box-shadow: #d3d3d3 0px 1px 10px;
+    background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255,255,255,0.50) 47%, rgba(0,0,0,0.50) 100%);
+    background-blend-mode: screen;
+    border-radius: 4px;
+    width: 60%;
+    padding: 30px;
+    margin: 30px auto;
+    color: #1B1F22;
+  }
+  
+  .temperature-today {
+    font-size: 80px;
+    text-align: center;
+    font-family: museo-sans,sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #1B1F22;
+  }
+  
+  .current-data {
+    font-size: 18px;
+    font-family: museo-sans,sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    color: #1B1F22;
+  }
+  
+  .add-today-info {
+    font-size: 18px;
+    font-family: museo-sans,sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    color: #1B1F22;
+  }
+  
+  .add-today-info-icon {
+    font-size: 18px;
+    color: #1B1F22;
+  }
+  
+  .other-days {
+    margin-top: 40px;
+    display: block;
+    text-align: center;
+    color: #1B1F22;
+  }
+  
+  .today {
+    margin-top: 40px;
+    text-align: center;
+    color: #1B1F22;
+  }
+  
+  .today-icon-clear {
+    font-size: 100px;
+    color: #FFBE0F;
+  }
+  
+  .today-icon-cloudy {
+    font-size: 100px;
+    color: #1AACEF;
+  }
+  
+  .today-icon-rainy {
+    font-size: 100px;
+    color: #005E7A;
+  }
+  
+  .today-icon-snowy {
+    font-size: 100px;
+    color: #6B9CDB;
+  }
+  
+  .other-days-icon {
+    font-size: 45px;
+    margin-bottom: 5px;
+    color: #1B1F22;
+  }
+  
+  .other-days-info {
+    font-size: 15px;
+    font-family: museo-sans,sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    color: #1B1F22;
+  }
+  
+  .grades {
+    font-size: 15px; 
+    margin-top: 60px;
+    margin-bottom: 20px;
+    display: block;
+    text-align: center;
+    font-family: museo-sans,sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    color: #1B1F22;
+  }
+  
+  a {
+  color: #1B1F22;
+  text-decoration: none;
+  }
+  
+  a:hover {
+  color: #1B1F22;
+  font-weight: 500;
+  }
+  
+  a:focus {
+    color: #1B1F22;
+    font-weight: 500;
+    outline: none;
+     }
+  
+  a:active {
+    color: #1B1F22;
+    font-weight: 500;
+    outline: none;
+    }  
