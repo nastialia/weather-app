@@ -26,6 +26,43 @@ currentTime.innerHTML = `${day}, ${hours}:${minutes}`;
 let symbol = document.querySelector("#temperature-symbol"); 
 let temperatureElement = document.querySelector("#temperature-today");
 
+function formatDay(timestamp) {
+let date = new Date(timestamp * 1000);
+let day = date.getDay();
+let days = [
+  "SUN",
+  "MON",
+  "TUE",
+  "WED",
+  "THU",
+  "FRI",
+  "SAT"
+];
+return days[day]; 
+}
+
+function showForecast(response) {
+  let dailyForecast = response.data.daily;
+  let forecastElement = document.querySelector("#weather-forecast");
+  let forecastHTML = `<div class="row">`;
+  dailyForecast.forEach(function(forecastDay, index){
+    if (index < 5) {
+  forecastHTML = forecastHTML + `<div class="col other-days-info"><i class="bi bi-cloud-lightning-rain other-days-icon"></i><br />${formatDay(forecastDay.dt)} <br /> ${Math.round(forecastDay.temp.min)}°C/${Math.round(forecastDay.temp.max)}°C</div>`;
+    }  
+});
+forecastHTML = forecastHTML + `</div>`;
+forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let units = "metric";
+  let apiKey = "6c6a0284a7f6595d0113dad9dc3b9e69";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(showForecast);
+}
+
 function showTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   celsiusTemperature = response.data.main.temp;
@@ -71,7 +108,12 @@ function showTemperature(response) {
     document.getElementById("background").style.backgroundImage = 'background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%)';
     document.getElementById('icon-today').classList.add('bi', 'bi-snow', 'today-icon-snowy');
   }
+
+getForecast(response.data.coord);
+
 }
+
+
 
 let celsiusTemperature = null; 
 
