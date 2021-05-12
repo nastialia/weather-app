@@ -47,38 +47,31 @@ let iconOther = null;
 
 function showForecast(response) {
   let dailyForecast = response.data.daily;
-  console.log(response);
-  let forecastDescription = response.data.current.weather[0].main; 
-  console.log(forecastDescription);
   let forecastElement = document.querySelector("#weather-forecast");
   let forecastHTML = `<div class="row">`;
-  dailyForecast.forEach(function(forecastDay, index){
+  dailyForecast.forEach(function (forecastDay, index) {
     if (index < 5) {
-  forecastHTML = forecastHTML + `<div class="col other-days-info">${iconOther}<br />${formatDay(forecastDay.dt)} <br /> ${Math.round(forecastDay.temp.min)}°C/${Math.round(forecastDay.temp.max)}°C</div>`;
-    }  
-    if (forecastDescription === "Rain") {
-    iconOther = `<i class="bi bi-cloud-rain other-days-icon"></i>`;
+      let forecastDescription = forecastDay.weather[0].main;
+      if (forecastDescription === "Rain") {
+        iconOther = `<i class="bi bi-cloud-rain other-days-icon"></i>`;
+      } else if (forecastDescription === "Clouds") {
+        iconOther = `<i class="bi bi-cloud other-days-icon"></i>`;
+      } else if (forecastDescription === "Thunderstorm") {
+        iconOther = `<i class="bi bi-cloud-lightning-rain other-days-icon"></i>`;
+      } else if (forecastDescription === "Drizzle") {
+        iconOther = `<i class="bi bi-cloud-drizzle other-days-icon"></i>`;
+      } else if (forecastDescription === "Clear") {
+        iconOther = `<i class="bi bi-sun other-days-icon"></i>`;
+      } else if (forecastDescription === "Snow") {
+        iconOther = `<i class="bi bi-snow other-days-icon"></i>`;
+      }
+      forecastHTML =
+        forecastHTML +
+        `<div class="col other-days-info">${iconOther}<br />${formatDay(forecastDay.dt)} <br /> ${Math.round(forecastDay.temp.min)}°C/${Math.round(forecastDay.temp.max)}°C</div>`;
     }
-    else if (forecastDescription === "Clouds")
-    {
-      iconOther = `<i class="bi bi-cloud other-days-icon"></i>`;
-    }  
-    else if (forecastDescription === "Thunderstorm")  
-    {
-      iconOther = `<i class="bi bi-cloud-lightning-rain other-days-icon"></i>`;
-    } 
-    else if (forecastDescription === "Drizzle") {
-      iconOther = `<i class="bi bi-cloud-drizzle other-days-icon"></i>`;
-    }
-    else if (forecastDescription === "Clear") {
-      iconOther = `<i class="bi bi-sun other-days-icon"></i>`;
-    }
-    else if (forecastDescription === "Snow") {
-      iconOther = `<i class="bi bi-snow other-days-icon"></i>`;
-    }
-});
-forecastHTML = forecastHTML + `</div>`;
-forecastElement.innerHTML = forecastHTML;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 
