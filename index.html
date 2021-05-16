@@ -31,15 +31,19 @@
         <div class="col">
           <div class="container">
             <div class="row">
-              <div class="col add-today-info-icon">
-                <i class="bi bi-wind"></i><br />
-                <i class="bi bi-clouds"></i><br />
-                <i class="bi bi-droplet"></i>
-              </div>
-              <div class="col add-today-info">      
-                <p id="today-wind">2 m/s</p>
-                <p id="today-cloudiness">0%</p>
-                <p id="today-humidity">70%</p>
+              <div class="col">
+                <div class="d-inline-flex">
+                  <div><i class="bi bi-wind add-today-info-icon"></i></div>
+                  <p id="today-wind" class="add-today-info">2 m/s</p>
+                </div><br />
+                <div class="d-inline-flex">
+                  <div class="mr-1"><i class="bi bi-clouds add-today-info-icon"></i></div>
+                  <p id="today-cloudiness" class="add-today-info">0%</p>
+                </div><br />
+                <div class="d-inline-flex">
+                  <div class="mr-1"><i class="bi bi-droplet add-today-info-icon"></i></div>
+                  <p id="today-humidity" class="add-today-info">70%</p>
+                </div>
               </div>
             </div>
           </div>

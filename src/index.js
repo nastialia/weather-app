@@ -2,11 +2,14 @@ let now = new Date();
 let minutes = now.getMinutes();
 if (minutes < 10) {
   minutes = `0${minutes}`;
-}
+} 
 let hours = now.getHours();
 if (hours < 10) {
   hours = `0${hours}`;
-}
+} 
+// if (hours < 5) {
+//   document.getElementById("background").style.backgroundImage = 'background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%)';
+// }
 
 let days = [
   "SUN",
@@ -44,13 +47,12 @@ return days[day];
 
 let iconOther = null; 
 
-
 function showForecast(response) {
   let dailyForecast = response.data.daily;
   let forecastElement = document.querySelector("#weather-forecast");
   let forecastHTML = `<div class="row">`;
   dailyForecast.forEach(function (forecastDay, index) {
-    if (index < 5) {
+    if (index < 6 && index > 0) {
       let forecastDescription = forecastDay.weather[0].main;
       if (forecastDescription === "Rain") {
         iconOther = `<i class="bi bi-cloud-rain other-days-icon"></i>`;
