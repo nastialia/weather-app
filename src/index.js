@@ -7,9 +7,11 @@ let hours = now.getHours();
 if (hours < 10) {
   hours = `0${hours}`;
 } 
-// if (hours < 5) {
-//   document.getElementById("background").style.backgroundImage = 'background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%)';
-// }
+
+// if (hours < 5 && hours > 21) {
+//   document.body.classList.add("night-mode");
+//   document.getElementById("background").style.backgroundImage = "linear-gradient(to top, #1E3C72 0%, #1E3C72 1%, #2A5298 100%)";
+// } 
 
 let days = [
   "SUN",
@@ -85,6 +87,7 @@ function getForecast(coordinates) {
 }
 
 function showTemperature(response) {
+  console.log(response);
   let temperature = Math.round(response.data.main.temp);
   celsiusTemperature = response.data.main.temp;
   console.log(response);
@@ -97,11 +100,12 @@ function showTemperature(response) {
   cloudiness.innerHTML = `${response.data.clouds.all} %`;
   let humidity = document.querySelector("#today-humidity");
   humidity.innerHTML = `${response.data.main.humidity} %`;
-  if (description === "Rain") {
+  if (description.innerHTML === "Rain")
+  {
     description.innerHTML = "rainy";
     document.getElementById("background").style.backgroundImage = 'linear-gradient(to top, #dfe9f3 0%, white 100%)';
     document.getElementById('icon-today').classList.add('bi', 'bi-cloud-rain', 'today-icon-rainy');
-  }
+  }  
   else if (description.innerHTML === "Clouds")
   {
     description.innerHTML = "cloudy";
