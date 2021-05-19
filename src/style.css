@@ -9,9 +9,10 @@
     border-right: none;
     border-bottom: solid black 1px;
     margin: 20px 10px;
-    width: auto;
+    width: 100px;
     line-height: 1;
     padding: 0 2px;
+    text-align: center;
   }
   
   input:-webkit-autofill,
@@ -75,6 +76,7 @@
     font-weight: 100;
     font-style: normal;
     color: #1B1F22;
+    margin-bottom: 5px;
   }
   
   .add-today-info-icon {

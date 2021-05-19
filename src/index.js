@@ -8,11 +8,6 @@ if (hours < 10) {
   hours = `0${hours}`;
 } 
 
-// if (hours < 5 && hours > 21) {
-//   document.body.classList.add("night-mode");
-//   document.getElementById("background").style.backgroundImage = "linear-gradient(to top, #1E3C72 0%, #1E3C72 1%, #2A5298 100%)";
-// } 
-
 let days = [
   "SUN",
   "MON",
@@ -133,14 +128,34 @@ function showTemperature(response) {
     document.getElementById("background").style.backgroundImage = 'background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%)';
     document.getElementById('icon-today').classList.add('bi', 'bi-snow', 'today-icon-snowy');
   }
+  // if (hours < 5 || hours >= 21) {
+  //   document.body.classList.add("night-mode");
+  //   document.getElementById('icon-today').classList.add("night-mode");
+  //   document.getElementById('min-temp').classList.add("night-mode");
+  //   document.getElementById('max-temp').classList.add("night-mode");
+  //   document.getElementById('temperature-description').classList.add("night-mode");
+  //   document.getElementById('temperature-today').classList.add("night-mode");
+  //   document.getElementById('temperature-symbol').classList.add("night-mode");
+  //   document.getElementById('today-cloudiness').classList.add("night-mode");
+  //   document.getElementById('today-wind').classList.add("night-mode");
+  //   document.getElementById('today-humidity').classList.add("night-mode");
+  //   document.getElementById('cloudiness').classList.add("night-mode");
+  //   document.getElementById('wind').classList.add("night-mode");
+  //   document.getElementById('humidity').classList.add("night-mode");
+  //   document.getElementById('weather-forecast').classList.add("night-mode");
+  //   document.getElementById('city-description-style').classList.add("night-mode");
+  // document.getElementById("background").style.backgroundImage =
+  //     "linear-gradient(to top, #1E3C72 0%, #1E3C72 1%, #2A5298 100%)";
+  // }
 let minTemp = document.querySelector("#min-temp");
-minTemp.innerHTML = Math.round(response.data.main.temp_min);
+minTemp.innerHTML = `${Math.round(response.data.main.temp_min)}°C/`;
 let maxTemp = document.querySelector("#max-temp");
-maxTemp.innerHTML = Math.round(response.data.main.temp_max);
-
+maxTemp.innerHTML = `${Math.round(response.data.main.temp_max)}°C`;
+document.querySelector("#city-input").value = response.data.name;
 getForecast(response.data.coord);
 
 }
+
 
 
 let celsiusTemperature = null; 
@@ -148,12 +163,14 @@ let celsiusTemperature = null;
 function showCity(event) {
   event.preventDefault();
   let inputCity = document.querySelector("#city-input");
-  let city = inputCity.value;
+  searchCity(inputCity.value);
+  document.getElementById("icon-today").removeAttribute("class");
+}
+function searchCity(city) {
   let units = "metric";
   let apiKey = "6c6a0284a7f6595d0113dad9dc3b9e69";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
   axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
-  document.getElementById("icon-today").removeAttribute("class");
 }
 
 let form = document.querySelector("#city-form");
@@ -179,3 +196,5 @@ fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
+
+searchCity("Berlin, Germany");

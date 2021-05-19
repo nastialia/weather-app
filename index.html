@@ -11,57 +11,70 @@
     <link rel="stylesheet" href="https://use.typekit.net/xjh0ild.css">
   </head>
   <body>
-      <div class="background-sunny" id="background">
-    <link rel="stylesheet" href="src/style.css" />
-    <div class="d-inline-flex justify-content-center w-100"> 
-      <h2 class="city-description-style">Currently in</h2>
-      <form id="city-form">
-        <input type="text" class="city-input-style city-style" id="city-input">
-      </form>
-      <h2 class="city-description-style">it's <span id="temperature-description"></span></h2> 
-    </div>
-    <div class="container today">
-    <div class="row">
-        <div class="col"><i id="icon-today" class=""></i></div>
-        <div class="col"><p class="current-data" id="current-time">Sun, 14:46</p> 
-          <h1 class="temperature-today">
-          <span id="temperature-today"></span><span class="temperature-today" id="temperature-symbol">°C</span>
-          </h1><p class="current-data"><span id="min-temp">30</span>°C/<span id="max-temp">40</span>°C</p>
+    <div class="background-sunny" id="background">
+      <div>
+        <link rel="stylesheet" href="src/style.css" />
+        <div class="d-inline-flex justify-content-center w-100"> 
+          <h2 id="city-description-style" class="city-description-style">Currently in</h2>
+          <form id="city-form">
+            <input type="text" class="city-input-style city-style" id="city-input" onkeypress="this.style.width = ((this.value.length + 1) * 14) + 'px';">
+          </form>
+          <h2 id="city-description-style" class="city-description-style">it's <span id="temperature-description"></span></h2> 
         </div>
-        <div class="col">
-          <div class="container">
-            <div class="row">
+
+        <div class="container today">
+          <div class="row d-inline-flex align-items-center justify-content-around w-100">
+              <div class="col"><i id="icon-today" class=""></i></div>
+              <div class="col"><p class="current-data" id="current-time">Sun, 14:46</p> 
+                <h1 class="temperature-today">
+                  <span id="temperature-today"></span><span class="temperature-today" id="temperature-symbol">°C</span>
+                </h1>
+                <p class="current-data">
+                  <span id="min-temp"></span><span id="max-temp"></span>
+                </p>
+              </div>
+              
               <div class="col">
-                <div class="d-inline-flex">
-                  <div><i class="bi bi-wind add-today-info-icon"></i></div>
-                  <p id="today-wind" class="add-today-info">2 m/s</p>
-                </div><br />
-                <div class="d-inline-flex">
-                  <div class="mr-1"><i class="bi bi-clouds add-today-info-icon"></i></div>
-                  <p id="today-cloudiness" class="add-today-info">0%</p>
-                </div><br />
-                <div class="d-inline-flex">
-                  <div class="mr-1"><i class="bi bi-droplet add-today-info-icon"></i></div>
-                  <p id="today-humidity" class="add-today-info">70%</p>
+                <div class="container d-flex justify-content-center">
+                  <div class="row">
+                    <div class="d-inline-flex">
+                      <div class="">
+                        <div style="padding-bottom: 4px"><i id="cloudiness" class="bi bi-wind add-today-info-icon"></i></div>
+                        <div style="padding-bottom: 4px"><i id="wind" class="bi bi-clouds add-today-info-icon"></i></div>
+                        <div style="padding-bottom: 4px"><i id="humidity" class="bi bi-droplet add-today-info-icon"></i></div>
+                      </div>
+
+                      <div">
+                        <div style="text-align: start; margin-left: 5px"><p id="today-wind" class="add-today-info">2 m/s</p></div>
+                        <div style="text-align: start; margin-left: 5px"><p id="today-cloudiness" class="add-today-info">0%</p></div>
+                        <div style="text-align: start; margin-left: 5px"><p id="today-humidity" class="add-today-info">70%</p></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
+          </div>
+        
+          <div class="container other-days" id="weather-forecast">
+            <div class="row">
+              <div class="col other-days-info">
+                <i class="bi bi-cloud-lightning-rain other-days-icon"></i><br />MON <br /> 30°C/40°C
               </div>
             </div>
           </div>
         </div>
+
+      <span class="grades">
+        <a href="#" id="celsius-link">°C</a> | <a href="#" id="fahrenheit-link">°F</a>
+      </span>
+      <p class="coder"><a href="https://github.com/nastialia/weather-app" target=”_blank”>open-sourced</a> by anastasia</p>
+
     </div>
-      <div class="container other-days" id="weather-forecast">
-            <div class="row">
-              <div class="col other-days-info"><i class="bi bi-cloud-lightning-rain other-days-icon"></i><br />MON <br /> 30°C/40°C</div>
-            </div>
-          </div>
-          </div>
-          <span class="grades">
-            <a  id="celsius-link">°C</a> | <a href="#" id="fahrenheit-link">°F</a>
-          </span>
-          <p class="coder"><a href="https://github.com/nastialia/weather-app" target=”_blank”>Coded</a> by Anastasia</p>
-          <script src="src/index.js"></script>
-        </body>
-      </html>
+  </div>
+
+  <script src="src/index.js"></script>
+  </body>
+</html>
       
       
       
