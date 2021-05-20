@@ -144,6 +144,12 @@ function showTemperature(response) {
   //   document.getElementById('humidity').classList.add("night-mode");
   //   document.getElementById('weather-forecast').classList.add("night-mode");
   //   document.getElementById('city-description-style').classList.add("night-mode");
+  //   document.getElementById('current-time').classList.add("night-mode");
+  //   document.getElementById('grades').classList.add("night-mode");
+  //   document.getElementById('current-time').classList.add("night-mode");
+  //   document.getElementById('celsius-link').classList.add("night-mode");
+  //   document.getElementById('fahrenheit-link').classList.add("night-mode");
+  //   document.getElementById('coder').classList.add("night-mode");
   // document.getElementById("background").style.backgroundImage =
   //     "linear-gradient(to top, #1E3C72 0%, #1E3C72 1%, #2A5298 100%)";
   // }
