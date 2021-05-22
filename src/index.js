@@ -159,7 +159,6 @@ let maxTemp = document.querySelector("#max-temp");
 maxTemp.innerHTML = `${Math.round(response.data.main.temp_max)}°C`;
 document.querySelector("#city-input").value = response.data.name;
 getForecast(response.data.coord);
-
 }
 
 
@@ -176,7 +175,11 @@ function searchCity(city) {
   let units = "metric";
   let apiKey = "6c6a0284a7f6595d0113dad9dc3b9e69";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
-  axios.get(`${apiUrl}&appid=${apiKey}`).then(showTemperature);
+  axios.get(`${apiUrl}&appid=${apiKey}`).then(
+    showTemperature)
+    .catch(err => {
+      alert("We don't know this city 😢");
+  })
 }
 
 let form = document.querySelector("#city-form");
